@@ -1,0 +1,59 @@
+ <!-- <div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr [class.green]="prod.price>=500" [class.red]="prod.price<=500"
+      *ngFor="let prod of productList">
+      <tr [ngClass]="getClass(prod)"
+    *ngFor="let prod of productList">
+        <td>{{prod.name}}</td>
+        <td>{{prod.price}}</td>
+        <td>{{prod.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<div class="container">
+<!-- <div class="col-sm-4">
+  <div class="card" *ngFor="let prod of products">
+    <app-product-tumbnail [products]="prod"> </app-product-tumbnail>
+  </div>
+</div> -->
+<P appBasicHighlights hc="red">WellCome</P>
+<P [appHigherHiglights]="'yellow'" hc="red">WellCome Again</P>
+
+<div class='row'>
+  <div class="form-group">
+<input type="text" class="form-control" [(ngModel)]='filterText'>
+  </div>
+</div>
+
+
+<div class="col-md-2 alert alert-danger" *ngIf='filterText.length>0 else noFilter'>
+
+  {{filterText}}
+</div>
+<!-- <ng-template [ngIf]="filterText.length>0"]>
+  <div class="col-md-2 alert alert-danger">
+
+    {{filterText}}
+  </div>
+</ng-template> -->
+
+<ng-template #noFilter>
+  <div class="col-md-2 alert alert-info">
+    {{filterText}}
+  </div>
+</ng-template>
+
+<div *ngFor="let prod of products | filter : filterText">
+<!-- <app-product-tumbnail [products]="prod"></app-product-tumbnail> -->
+<!-- <app-product-tumbnail [prd]="prod" (sendData)="receiveData($event)"></app-product-tumbnail> -->
+<app-product-tumbnail [prd]="prod" (sd)="receiveData($event)"></app-product-tumbnail>
+</div>

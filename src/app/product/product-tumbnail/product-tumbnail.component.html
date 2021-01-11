@@ -1,0 +1,21 @@
+
+
+
+
+<div class="row">
+  <div class="col-sm-12">
+<div class="card border-success">
+  <div class="card-header">
+    <p>Name : {{products.productName}}</p>
+   </div>
+  <div class="card-body">
+   <p> code: {{products.productCode}}</p>
+    <p> release Date :{{products.releaseDate | date : 'MM-dd-yyyy'}}  </p>
+    <p> Price: {{products.price | currency : 'INR' : false : '1.1-1'}}</p>
+    <p> {{products.description?.descText | lowercase | shorten}}</p>
+    <p><img src={{products.imageUrl}} alt="Girl in a jacket" width="300" height="150"></p>
+   <p><button type="button" class="btn btn-primary" (click)="sendParent(products)">Send parent</button></p>
+  </div>
+</div>
+</div>
+</div>

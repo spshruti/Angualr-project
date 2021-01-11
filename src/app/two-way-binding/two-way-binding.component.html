@@ -1,0 +1,8 @@
+<!-- impliment one way binding
+implement two way binding -->
+<input placeholder="Enter text" [(ngModel)]="TwoWayChanges">
+<!-- <input placeholder="Enter text" [ngModel]="TwoWayChanges" [ngModelChange]="TwoWayChange=$event"> -->
+<br>
+{{TwoWayChanges}}
+<br>
+<button type="button" class="btn btn-primary" (click)="TwoWayChanges='shruti sigi'">Click</button>

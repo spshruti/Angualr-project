@@ -1,0 +1,13 @@
+.green{
+  background-color: green;
+font-weight: bold;
+color: black;}
+.red{
+  background-color: crimson;
+font-weight: bold;
+color: green;}
+
+.noDescr{
+border-style: dashed;
+border-color: blue;
+}
