@@ -14,9 +14,12 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class ProductComponent implements OnInit {
- products: Product[] = productList;
+ products: Product[];
   filterText:string;
-  constructor(private logger:LoggerService) { }
+  constructor(private logger:LoggerService, private ps:ProductService) {
+
+    this.products=this.ps.getProducts();
+  }
 
   ngOnInit() {
   }

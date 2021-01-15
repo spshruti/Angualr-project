@@ -1,3 +1,4 @@
+import { LoggerService } from './logger.service';
 import { Product } from './product';
 //import { Product } from './../../../../../classAngular/src/app/services/product';
 
@@ -6,12 +7,13 @@ import { Product } from './product';
 // })
 export class ProductService {
 
-  constructor() { }
+  constructor(private logger:LoggerService) { }
 
   getProducts(){
+    this.logger.log("Get products called");
     return productList;
   }
-
+}
   const productList:Product[] = [
     {
         "productId": 1,
@@ -86,4 +88,4 @@ export class ProductService {
         "imageUrl": "https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
   ];
-}
+
