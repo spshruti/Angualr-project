@@ -15,7 +15,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
  products: Product[];
-  filterText:string;
+  filterText:string="";
   constructor(private logger:LoggerService, private ps:ProductService) {
 
     this.products=this.ps.getProducts();

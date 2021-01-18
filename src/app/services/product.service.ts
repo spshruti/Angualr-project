@@ -1,10 +1,12 @@
 import { LoggerService } from './logger.service';
 import { Product } from './product';
+import { Injectable } from '@angular/core';
+
 //import { Product } from './../../../../../classAngular/src/app/services/product';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductService {
 
   constructor(private logger:LoggerService) { }
@@ -12,6 +14,10 @@ export class ProductService {
   getProducts(){
     this.logger.log("Get products called");
     return productList;
+  }
+
+  getProduct(productId:number):Product{
+    return productList.find((p) => p.productId= productId);
   }
 }
   const productList:Product[] = [
