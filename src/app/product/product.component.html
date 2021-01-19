@@ -1,4 +1,5 @@
- <!-- <div class="container">
+
+<!-- <div class="container">
   <table class="table">
     <thead>
       <tr>
@@ -20,40 +21,43 @@
   </table>
 </div> -->
 <div class="container">
-<!-- <div class="col-sm-4">
+  <!-- <div class="col-sm-4">
   <div class="card" *ngFor="let prod of products">
     <app-product-tumbnail [products]="prod"> </app-product-tumbnail>
   </div>
 </div> -->
-<P appBasicHighlights hc="red">WellCome</P>
-<P [appHigherHiglights]="'yellow'" hc="red">WellCome Again</P>
+  <P appBasicHighlights hc="red">WellCome</P>
+  <P [appHigherHiglights]="'yellow'" hc="red">WellCome Again</P>
 
-<div class='row'>
-  <div class="form-group">
-<input type="text" class="form-control" [(ngModel)]='filterText'>
+  <div class='row'>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]='filterText'>
+    </div>
   </div>
-</div>
 
 
-<div class="col-md-2 alert alert-danger" *ngIf='filterText.length>0 else noFilter'>
+  <div class="col-md-2 alert alert-danger" *ngIf='filterText.length>0 else noFilter'>
 
-  {{filterText}}
-</div>
-<!-- <ng-template [ngIf]="filterText.length>0"]>
+    {{filterText}}
+  </div>
+  <!-- <ng-template [ngIf]="filterText.length>0"]>
   <div class="col-md-2 alert alert-danger">
-
     {{filterText}}
   </div>
 </ng-template> -->
 
-<ng-template #noFilter>
-  <div class="col-md-2 alert alert-info">
-    {{filterText}}
+  <ng-template #noFilter>
+    <div class="col-md-2 alert alert-info">
+      {{filterText}}
+    </div>
+  </ng-template>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let prod of products | filter : filterText">
+      <!-- <app-product-tumbnail [products]="prod"></app-product-tumbnail> -->
+      <!-- <app-product-tumbnail [prd]="prod" (sendData)="receiveData($event)"></app-product-tumbnail> -->
+      <app-product-tumbnail
+      [prd]="prod" (sd)="receiveData($event)" [routerLink]="['/productdetails', prod.productId]"
+      ></app-product-tumbnail>
+    </div>
   </div>
-</ng-template>
 
-<div *ngFor="let prod of products | filter : filterText">
-<!-- <app-product-tumbnail [products]="prod"></app-product-tumbnail> -->
-<!-- <app-product-tumbnail [prd]="prod" (sendData)="receiveData($event)"></app-product-tumbnail> -->
-<app-product-tumbnail [prd]="prod" (sd)="receiveData($event)"></app-product-tumbnail>
-</div>

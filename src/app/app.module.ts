@@ -1,3 +1,5 @@
+import { LoggerService } from './services/logger.service';
+import { RouterModule ,Route} from '@angular/router';
 import { ShortenPipe } from './shared/pipes/shorten';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,7 +17,17 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
 import { BasicHighlightsDirective } from './shared/directives/basic-highlights.directive';
 import { HigherHiglightsDirective } from './shared/directives/higher-higlights.directive';
 import { UnlessDirective } from './shared/directives/unless.directive';
+import { TempProductComponent } from './temp-product/temp-product.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
+const routes : Route[]=[{
+path:"home", component:HomeComponent},
+{path:'product', component:ProductComponent},
+{path:'productdetails/:id', component:ProductDetailsComponent},
+{path:'', component:HomeComponent},
+{path: '**',component:HomeComponent }]
 
 @NgModule({
   declarations: [
@@ -30,14 +42,19 @@ import { UnlessDirective } from './shared/directives/unless.directive';
     FilterPipe,
     BasicHighlightsDirective,
     HigherHiglightsDirective,
-    UnlessDirective
+    UnlessDirective,
+    TempProductComponent,
+    HeaderComponent,
+    HomeComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
