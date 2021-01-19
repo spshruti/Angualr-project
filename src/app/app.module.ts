@@ -1,3 +1,4 @@
+import { LoggerService } from './services/logger.service';
 import { RouterModule ,Route} from '@angular/router';
 import { ShortenPipe } from './shared/pipes/shorten';
 import { FormsModule } from '@angular/forms';
@@ -53,7 +54,7 @@ path:"home", component:HomeComponent},
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

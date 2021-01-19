@@ -12,7 +12,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private route:ActivatedRoute, private ps:ProductService) { }
 
   ngOnInit() {
-    //console.log(this.route.snapshot.params.id);
+    console.log(this.route.snapshot.params.id);
   }
 
 }
