@@ -21,13 +21,18 @@ import { TempProductComponent } from './temp-product/temp-product.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes : Route[]=[{
 path:"home", component:HomeComponent},
 {path:'product', component:ProductComponent},
 {path:'productdetails/:id', component:ProductDetailsComponent},
 {path:'', component:HomeComponent},
-{path: '**',component:HomeComponent }]
+{path:'signup', component:SignupComponent},
+{path: '**',component:HomeComponent },
+]
+
+
 
 @NgModule({
   declarations: [
@@ -46,7 +51,8 @@ path:"home", component:HomeComponent},
     TempProductComponent,
     HeaderComponent,
     HomeComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -52,11 +52,30 @@
     </div>
   </ng-template>
   <div class="row">
+    <!-- <div class="col-md-4" *ngFor="let prod of products | filter : filterText">
+      <!-- <app-product-tumbnail [products]="prod"></app-product-tumbnail> -->
+      <!-- <app-product-tumbnail [prd]="prod" (sendData)="receiveData($event)"></app-product-tumbnail> -->
+      <!-- <app-product-tumbnail
+      [prd]="prod" (sd)="receiveData($event)" [routerLink]="['/productdetails', prod.productId]"
+      ></app-product-tumbnail> -->
+    <!-- </div>  -->
+
+        <!-- Example for query prams -->
+    <!-- <div class="col-md-4" *ngFor="let prod of products | filter : filterText"> -->
+      <!-- <app-product-tumbnail [products]="prod"></app-product-tumbnail> -->
+      <!-- <app-product-tumbnail [prd]="prod" (sendData)="receiveData($event)"></app-product-tumbnail> -->
+      <!-- <app-product-tumbnail
+      [prd]="prod" (sd)="receiveData($event)" [routerLink]="['/productdetails', prod.productId]" [queryParams]="{code: prod.productId,name: prod.productName}"
+      ></app-product-tumbnail>
+    </div> -->
+
+
+        <!-- Example for  fragment -->
     <div class="col-md-4" *ngFor="let prod of products | filter : filterText">
       <!-- <app-product-tumbnail [products]="prod"></app-product-tumbnail> -->
       <!-- <app-product-tumbnail [prd]="prod" (sendData)="receiveData($event)"></app-product-tumbnail> -->
       <app-product-tumbnail
-      [prd]="prod" (sd)="receiveData($event)" [routerLink]="['/productdetails', prod.productId]"
+      [prd]="prod" (sd)="receiveData($event)" [routerLink]="['/productdetails', prod.productId]" [fragment]="prod.productCode"
       ></app-product-tumbnail>
     </div>
   </div>

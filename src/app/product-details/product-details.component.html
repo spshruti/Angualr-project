@@ -1,1 +1,10 @@
-<p style="margin-top: 80px;">product-details works!</p>
+<div class="jumbotron">
+  <h1 class="display-3">{{product.productName | uppercase}}</h1>
+  <p class="lead">{{product.productCode}}</p>
+  <hr class="my-2">
+  <p>{{product.releaseDate | date}}</p>
+  <img [src]=product.imageUrl alt="">
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+  </p>
+</div>
